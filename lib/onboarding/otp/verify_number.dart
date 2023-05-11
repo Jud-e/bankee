@@ -1,6 +1,7 @@
 import 'package:bankee/constants/colors.dart';
 import 'package:bankee/constants/margins.dart';
 import 'package:bankee/constants/text_style.dart';
+import 'package:bankee/onboarding/otp/creation_success.dart';
 import 'package:bankee/resuable_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -67,7 +68,7 @@ class _NumberVerificationState extends State<NumberVerification> {
                         ],
                       ),
                       yMargin(30),
-                      Text("Didn't receive the code",
+                      Text("Didn't receive the code?",
                           style: h4.copyWith(
                               fontWeight: regular, color: darkblue)),
                       yMargin(14),
@@ -76,9 +77,16 @@ class _NumberVerificationState extends State<NumberVerification> {
                               fontWeight: regular,
                               color: purple,
                               decoration: TextDecoration.underline)),
-                      yMargin(180),
+                      yMargin(140),
                       CustomButton(
-                          color: purple, text: "Proceed", function: () {}),
+                          color: purple,
+                          text: "Proceed",
+                          function: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Success()));
+                          }),
                       yMargin(21),
                       RichText(
                           textAlign: TextAlign.center,
