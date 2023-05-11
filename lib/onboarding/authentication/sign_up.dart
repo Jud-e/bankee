@@ -2,6 +2,7 @@ import 'package:bankee/constants/colors.dart';
 import 'package:bankee/constants/margins.dart';
 import 'package:bankee/constants/text_style.dart';
 import 'package:bankee/onboarding/authentication/sign_in.dart';
+import 'package:bankee/onboarding/otp/number_registration.dart';
 import 'package:bankee/resuable_widgets/custom_button.dart';
 import 'package:bankee/resuable_widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -88,11 +89,19 @@ class _SignupState extends State<Signup> {
                 CustomButton(
                   color: purple,
                   text: "Sign up my account",
+                  function: () {},
                 ),
                 yMargin(7),
                 CustomButton(
                   color: darkblue,
                   text: "Sign up with Phone Number",
+                  function: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const MobileNumberRegistration()));
+                  },
                 ),
                 yMargin(19),
                 GestureDetector(

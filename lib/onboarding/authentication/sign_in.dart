@@ -75,7 +75,11 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 yMargin(51),
-                CustomButton(color: purple, text: "Sign in my Account"),
+                CustomButton(
+                  color: purple,
+                  text: "Sign in my Account",
+                  function: () {},
+                ),
                 yMargin(19),
                 GestureDetector(
                   onTap: () {

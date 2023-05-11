@@ -7,6 +7,7 @@ const FontWeight regular = FontWeight.w400;
 
 const TextStyle h1 = TextStyle(fontFamily: "DMSans", fontSize: 35);
 const TextStyle h2 = TextStyle(fontFamily: "DMSans", fontSize: 17);
+const TextStyle h3 = TextStyle(fontFamily: "DMSans", fontSize: 18);
 const TextStyle h4 = TextStyle(fontFamily: "DMSans", fontSize: 15);
 const TextStyle h5 = TextStyle(fontFamily: "DMSans", fontSize: 13);
 
