@@ -1,4 +1,5 @@
 import 'package:bankee/constants/colors.dart';
+import 'package:bankee/constants/text_style.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -17,7 +18,18 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text("data"), Text("data")],
+            children: [
+              Text(
+                "data",
+                style: h1.copyWith(color: white),
+              ),
+              Text(
+                "data",
+                style: h1.copyWith(
+                  color: white,
+                ),
+              )
+            ],
           ),
         ),
       ),
