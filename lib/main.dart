@@ -1,3 +1,4 @@
+import 'package:bankee/onboarding/authentication/sign_up.dart';
 import 'package:bankee/onboarding/splashscreen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: SplashScreen(),
+      home: Signup(),
     );
   }
 }

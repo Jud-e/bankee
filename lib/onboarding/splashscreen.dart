@@ -20,12 +20,12 @@ class _SplashScreenState extends State<SplashScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "data",
-                style: h1.copyWith(color: white),
+                "Bankee",
+                style: title.copyWith(color: white),
               ),
               Text(
-                "data",
-                style: h1.copyWith(
+                "Bank, Finance kit",
+                style: subtitle.copyWith(
                   color: white,
                 ),
               )
