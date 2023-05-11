@@ -7,6 +7,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import '../../resuable_widgets/otp_text_field.dart';
+
 class NumberVerification extends StatefulWidget {
   const NumberVerification({super.key});
 
@@ -45,24 +47,27 @@ class _NumberVerificationState extends State<NumberVerification> {
                                 color: purple,
                                 decoration: TextDecoration.underline))
                       ])),
-                      yMargin(59),
+                      yMargin(45),
                       Row(
-                        children: [
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
                           SizedBox(
                             width: 76,
-                            height: 40,
-                            child: TextFormField(
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly,
-                                LengthLimitingTextInputFormatter(1)
-                              ],
-                            ),
-                          )
+                            height: 76,
+                            child: OTPTextField(),
+                          ),
+                          SizedBox(
+                            width: 76,
+                            height: 76,
+                            child: OTPTextField(),
+                          ),
+                          SizedBox(
+                              width: 76, height: 76, child: OTPTextField()),
+                          SizedBox(width: 76, height: 76, child: OTPTextField())
                         ],
                       ),
-                      yMargin(43),
-                      Text("data",
+                      yMargin(30),
+                      Text("Didn't receive the code",
                           style: h4.copyWith(
                               fontWeight: regular, color: darkblue)),
                       yMargin(14),
@@ -71,7 +76,7 @@ class _NumberVerificationState extends State<NumberVerification> {
                               fontWeight: regular,
                               color: purple,
                               decoration: TextDecoration.underline)),
-                      yMargin(217),
+                      yMargin(180),
                       CustomButton(
                           color: purple, text: "Proceed", function: () {}),
                       yMargin(21),
