@@ -1,6 +1,7 @@
 import 'package:bankee/constants/colors.dart';
 import 'package:bankee/constants/margins.dart';
 import 'package:bankee/constants/text_style.dart';
+import 'package:bankee/resuable_widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
 class Signup extends StatefulWidget {
@@ -31,14 +32,10 @@ class _SignupState extends State<Signup> {
                 style: h4.copyWith(color: darkblue, fontWeight: regular),
               ),
               yMargin(62),
-              SizedBox(
-                height: 50,
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    filled: true,
-                  ),
-                ),
-              )
+              CustomTextField(
+                hintText: "Full Name",
+                color: purple.withOpacity(0.33),
+              ),
             ],
           ),
         ),
