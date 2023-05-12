@@ -13,3 +13,5 @@ const TextStyle h5 = TextStyle(fontFamily: "DMSans", fontSize: 13);
 
 const TextStyle title = TextStyle(fontFamily: "DMSans", fontSize: 70);
 const TextStyle subtitle = TextStyle(fontFamily: "DMSans", fontSize: 20);
+
+const TextStyle authorizeTitle = TextStyle(fontFamily: "DMSans", fontSize: 26);
