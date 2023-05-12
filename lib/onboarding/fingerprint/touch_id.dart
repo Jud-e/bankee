@@ -2,6 +2,7 @@ import 'package:bankee/constants/colors.dart';
 import 'package:bankee/constants/margins.dart';
 import 'package:bankee/constants/text_style.dart';
 import 'package:bankee/onboarding/authentication/sign_in.dart';
+import 'package:bankee/onboarding/otp/pin.dart';
 import 'package:bankee/resuable_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -56,7 +57,14 @@ class Fingerprint extends StatelessWidget {
                         color: purple, text: "Activate Now", function: () {}),
                     yMargin(16),
                     CustomButton(
-                        color: darkgrey, text: "Skip this", function: () {})
+                        color: darkgrey,
+                        text: "Skip this",
+                        function: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Pin()));
+                        })
                   ],
                 ),
               )
