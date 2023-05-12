@@ -70,29 +70,26 @@ class _MobileNumberRegistrationState extends State<MobileNumberRegistration> {
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide(color: purple),
                         ),
-                        prefixIcon: Container(
-                          child: Padding(
-                            padding: const EdgeInsets.all(13),
-                            child: InkWell(
-                              onTap: () {
-                                showCountryPicker(
-                                    context: context,
-                                    countryListTheme:
-                                        const CountryListThemeData(
-                                            bottomSheetHeight: 500),
-                                    onSelect: (value) {
-                                      setState(() {
-                                        selectedCountry = value;
-                                      });
+                        prefixIcon: Padding(
+                          padding: const EdgeInsets.all(13),
+                          child: InkWell(
+                            onTap: () {
+                              showCountryPicker(
+                                  context: context,
+                                  countryListTheme: const CountryListThemeData(
+                                      bottomSheetHeight: 500),
+                                  onSelect: (value) {
+                                    setState(() {
+                                      selectedCountry = value;
                                     });
-                              },
-                              child: Text(
-                                "${selectedCountry.flagEmoji} + ${selectedCountry.phoneCode}",
-                                style: const TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.black,
-                                    fontWeight: bold),
-                              ),
+                                  });
+                            },
+                            child: Text(
+                              "${selectedCountry.flagEmoji} + ${selectedCountry.phoneCode}",
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.black,
+                                  fontWeight: bold),
                             ),
                           ),
                         )),
