@@ -1,4 +1,3 @@
-import 'package:bankee/onboarding/authentication/sign_up.dart';
 import 'package:bankee/onboarding/splashscreen.dart';
 import 'package:flutter/material.dart';
 

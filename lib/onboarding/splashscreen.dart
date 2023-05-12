@@ -33,13 +33,11 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Text(
                 "Bankee",
-                style: title.copyWith(color: white),
+                style: title.copyWith(color: white, fontWeight: bold),
               ),
               Text(
                 "Bank, Finance kit",
-                style: subtitle.copyWith(
-                  color: white,
-                ),
+                style: subtitle.copyWith(color: white, fontWeight: medium),
               )
             ],
           ),
