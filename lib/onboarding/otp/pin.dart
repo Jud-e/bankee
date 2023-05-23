@@ -1,6 +1,7 @@
 import 'package:bankee/constants/colors.dart';
 import 'package:bankee/constants/margins.dart';
 import 'package:bankee/constants/text_style.dart';
+import 'package:bankee/money_summary.dart';
 import 'package:bankee/resuable_widgets/custom_button.dart';
 import 'package:bankee/resuable_widgets/otp_text_field.dart';
 import 'package:flutter/material.dart';
@@ -74,7 +75,7 @@ class _PinState extends State<Pin> {
                     },
                   ),
                 ),
-                yMargin(60),
+                yMargin(40),
                 Text(
                   "Set your PIN",
                   style: authorizeTitle.copyWith(
@@ -120,81 +121,90 @@ class _PinState extends State<Pin> {
                 yMargin(10),
                 Container(
                   alignment: Alignment.bottomCenter,
-                  child: Padding(
-                    padding: EdgeInsets.only(bottom: 32),
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            KeyboardNumber(
-                              n: 1,
-                              onPressed: () {},
-                            ),
-                            xMargin(10),
-                            KeyboardNumber(
-                              n: 2,
-                              onPressed: () {},
-                            ),
-                            xMargin(10),
-                            KeyboardNumber(
-                              n: 3,
-                              onPressed: () {},
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            KeyboardNumber(
-                              n: 4,
-                              onPressed: () {},
-                            ),
-                            xMargin(10),
-                            KeyboardNumber(
-                              n: 5,
-                              onPressed: () {},
-                            ),
-                            xMargin(10),
-                            KeyboardNumber(
-                              n: 6,
-                              onPressed: () {},
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            KeyboardNumber(
-                              n: 7,
-                              onPressed: () {},
-                            ),
-                            xMargin(10),
-                            KeyboardNumber(
-                              n: 8,
-                              onPressed: () {},
-                            ),
-                            xMargin(10),
-                            KeyboardNumber(
-                              n: 9,
-                              onPressed: () {},
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            KeyboardNumber(
-                              n: 0,
-                              onPressed: () {},
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          KeyboardNumber(
+                            n: 1,
+                            onPressed: () {},
+                          ),
+                          xMargin(10),
+                          KeyboardNumber(
+                            n: 2,
+                            onPressed: () {},
+                          ),
+                          xMargin(10),
+                          KeyboardNumber(
+                            n: 3,
+                            onPressed: () {},
+                          )
+                        ],
+                      ),
+                      yMargin(15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          KeyboardNumber(
+                            n: 4,
+                            onPressed: () {},
+                          ),
+                          xMargin(10),
+                          KeyboardNumber(
+                            n: 5,
+                            onPressed: () {},
+                          ),
+                          xMargin(10),
+                          KeyboardNumber(
+                            n: 6,
+                            onPressed: () {},
+                          )
+                        ],
+                      ),
+                      yMargin(15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          KeyboardNumber(
+                            n: 7,
+                            onPressed: () {},
+                          ),
+                          xMargin(10),
+                          KeyboardNumber(
+                            n: 8,
+                            onPressed: () {},
+                          ),
+                          xMargin(10),
+                          KeyboardNumber(
+                            n: 9,
+                            onPressed: () {},
+                          )
+                        ],
+                      ),
+                      yMargin(15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          KeyboardNumber(
+                            n: 0,
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-                CustomButton(color: purple, text: "Save PIN", function: () {})
+                yMargin(15),
+                CustomButton(
+                    color: purple,
+                    text: "Save PIN",
+                    function: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MoneySummary()));
+                    })
               ],
             ),
           ),

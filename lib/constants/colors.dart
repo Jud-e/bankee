@@ -9,4 +9,5 @@ var darkblue = HexColor("#1C1939");
 var grey = HexColor("#F7F7F7");
 var darkgrey = HexColor("#979797");
 
+var slightlyTransparent = HexColor("#F9F9FB");
 var transparent = Colors.transparent;
