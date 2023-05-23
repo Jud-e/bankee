@@ -1,6 +1,7 @@
 import 'package:bankee/constants/colors.dart';
 import 'package:bankee/constants/margins.dart';
 import 'package:bankee/constants/text_style.dart';
+import 'package:bankee/onboarding/fingerprint/touch_id.dart';
 import 'package:bankee/resuable_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,15 @@ class Success extends StatelessWidget {
                   ),
                 ),
                 yMargin(80),
-                CustomButton(color: purple, text: "Continue", function: () {}),
+                CustomButton(
+                    color: purple,
+                    text: "Continue",
+                    function: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Fingerprint()));
+                    }),
                 yMargin(20),
                 RichText(
                     textAlign: TextAlign.center,

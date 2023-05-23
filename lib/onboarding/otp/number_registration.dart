@@ -3,6 +3,7 @@ import 'package:bankee/constants/margins.dart';
 import 'package:bankee/constants/text_style.dart';
 import 'package:bankee/onboarding/otp/verify_number.dart';
 import 'package:bankee/resuable_widgets/custom_button.dart';
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,6 +16,17 @@ class MobileNumberRegistration extends StatefulWidget {
 }
 
 class _MobileNumberRegistrationState extends State<MobileNumberRegistration> {
+  Country selectedCountry = Country(
+      phoneCode: "234",
+      countryCode: "NG",
+      e164Sc: 0,
+      geographic: true,
+      level: 1,
+      name: "Nigeria",
+      example: "Nigeria",
+      displayName: "Nigeria",
+      displayNameNoCountryCode: "NG",
+      e164Key: "");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,18 +58,41 @@ class _MobileNumberRegistrationState extends State<MobileNumberRegistration> {
                     ],
                     cursorColor: darkgrey,
                     decoration: InputDecoration(
-                      filled: true,
-                      hintStyle: h4.copyWith(fontWeight: regular),
-                      contentPadding: const EdgeInsets.all(15),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: darkgrey),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(color: purple),
-                      ),
-                    ),
+                        filled: true,
+                        hintText: "Enter your phone number",
+                        hintStyle: h4.copyWith(fontWeight: regular),
+                        contentPadding: const EdgeInsets.all(15),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: darkgrey),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(color: purple),
+                        ),
+                        prefixIcon: Padding(
+                          padding: const EdgeInsets.all(13),
+                          child: InkWell(
+                            onTap: () {
+                              showCountryPicker(
+                                  context: context,
+                                  countryListTheme: const CountryListThemeData(
+                                      bottomSheetHeight: 500),
+                                  onSelect: (value) {
+                                    setState(() {
+                                      selectedCountry = value;
+                                    });
+                                  });
+                            },
+                            child: Text(
+                              "${selectedCountry.flagEmoji} + ${selectedCountry.phoneCode}",
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.black,
+                                  fontWeight: bold),
+                            ),
+                          ),
+                        )),
                   ),
                 ),
                 yMargin(107),
