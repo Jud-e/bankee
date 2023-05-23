@@ -7,6 +7,34 @@ import 'package:flutter/material.dart';
 
 import '../authentication/sign_in.dart';
 
+class KeyboardNumber extends StatelessWidget {
+  final int n;
+  final Function() onPressed;
+
+  const KeyboardNumber({required this.n, required this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 60,
+      height: 60,
+      decoration: BoxDecoration(shape: BoxShape.circle, color: transparent),
+      alignment: Alignment.center,
+      child: MaterialButton(
+          padding: const EdgeInsets.all(8.0),
+          onPressed: onPressed,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(60)),
+          height: 90,
+          child: Text(
+            "$n",
+            textAlign: TextAlign.center,
+            style: authorizeTitle.copyWith(fontWeight: bold),
+          )),
+    );
+  }
+}
+
 class Pin extends StatefulWidget {
   const Pin({super.key});
 
@@ -57,6 +85,7 @@ class _PinState extends State<Pin> {
                   "You will use this to login next time",
                   style: h4.copyWith(fontWeight: regular, color: darkblue),
                 ),
+                yMargin(40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -87,6 +116,83 @@ class _PinState extends State<Pin> {
                           controller: pinFourController,
                         ))
                   ],
+                ),
+                yMargin(10),
+                Container(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: EdgeInsets.only(bottom: 32),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            KeyboardNumber(
+                              n: 1,
+                              onPressed: () {},
+                            ),
+                            xMargin(10),
+                            KeyboardNumber(
+                              n: 2,
+                              onPressed: () {},
+                            ),
+                            xMargin(10),
+                            KeyboardNumber(
+                              n: 3,
+                              onPressed: () {},
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            KeyboardNumber(
+                              n: 4,
+                              onPressed: () {},
+                            ),
+                            xMargin(10),
+                            KeyboardNumber(
+                              n: 5,
+                              onPressed: () {},
+                            ),
+                            xMargin(10),
+                            KeyboardNumber(
+                              n: 6,
+                              onPressed: () {},
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            KeyboardNumber(
+                              n: 7,
+                              onPressed: () {},
+                            ),
+                            xMargin(10),
+                            KeyboardNumber(
+                              n: 8,
+                              onPressed: () {},
+                            ),
+                            xMargin(10),
+                            KeyboardNumber(
+                              n: 9,
+                              onPressed: () {},
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            KeyboardNumber(
+                              n: 0,
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 CustomButton(color: purple, text: "Save PIN", function: () {})
               ],
