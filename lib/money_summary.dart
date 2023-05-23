@@ -62,7 +62,9 @@ class _MoneySummaryState extends State<MoneySummary> {
                           "Top Category",
                           textAlign: TextAlign.left,
                           style: h3.copyWith(fontWeight: bold),
-                        )
+                        ),
+                        yMargin(23),
+                        Row()
                       ],
                     ),
                   ),
