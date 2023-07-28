@@ -58,13 +58,26 @@ class _MoneySummaryState extends State<MoneySummary> {
                         horizontal: 26, vertical: 31),
                     child: Column(
                       children: [
-                        Text(
-                          "Top Category",
-                          textAlign: TextAlign.left,
-                          style: h3.copyWith(fontWeight: bold),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Top Category",
+                            // textAlign: TextAlign.left,
+                            style: h3.copyWith(fontWeight: bold),
+                          ),
                         ),
                         yMargin(23),
-                        Row()
+                        Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Column(
+                                children: [Container()],
+                              ),
+                            )
+                          ],
+                        )
                       ],
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:bankee/constants/colors.dart';
 import 'package:bankee/constants/margins.dart';
 import 'package:bankee/constants/text_style.dart';
+import 'package:bankee/main%20screens/main_screen.dart';
 import 'package:bankee/onboarding/authentication/sign_up.dart';
 import 'package:bankee/resuable_widgets/custom_button.dart';
 import 'package:bankee/resuable_widgets/custom_text_field.dart';
@@ -78,7 +79,10 @@ class _SignInState extends State<SignIn> {
                 CustomButton(
                   color: purple,
                   text: "Sign in my Account",
-                  function: () {},
+                  function: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => const Home()));
+                  },
                 ),
                 yMargin(19),
                 GestureDetector(

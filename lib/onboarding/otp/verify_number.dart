@@ -6,7 +6,7 @@ import 'package:bankee/resuable_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+// import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../../resuable_widgets/otp_text_field.dart';
 
